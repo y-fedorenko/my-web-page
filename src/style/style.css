@@ -12,7 +12,7 @@
 }
 
 :root {
-  --app-background-dark: #181720;
+  --app-background-dark: #1c1b29;
   --app-font-color-white: #f0e9e9;
 }
 
@@ -143,8 +143,7 @@ main {
   h1 {
     font-size: 36px;
     text-shadow: 0 1px 1px #0000006b, 0 0 3px #bfc3a9, 0 0 2px #2b2b2e;
-    
-  }
+    }
 }
 
 .hero-text button {
@@ -162,7 +161,116 @@ main {
 }
 
 .hero-text button:hover {
-  background-color: #555;
+  background-color: var(--app-background-dark);
   color: white;
 }
 
+/* ------------------------------------------------------- */
+/* About me                                                */
+/* ------------------------------------------------------- */
+
+article, section {
+  margin-top: 80px;
+  color: var(--app-font-color-white);
+  height: auto;
+  width: 70%;
+
+  p {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: 300;
+  }
+  
+  h2 {
+    font-size: 24px;
+    font-weight: 500;
+    text-shadow: 0 1px 1px #0000006b, 0 0 3px #bfc3a9, 0 0 2px #2b2b2e;
+  }
+
+
+}
+
+.about-photo {
+  background-image: url("../media/aboutme.jpg");
+  width: 300px;
+  height: 600px;
+  
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-top: 80px;
+  margin-left: 15px;
+  opacity: 0.8;
+  border-radius: 6px;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+/* ------------------------------------------------------- */
+/* Projects                                                */
+/* ------------------------------------------------------- */
+
+article ul li {
+  line-height: 60px;
+  list-style: none;
+  
+}
+
+article ul li + li {
+  margin-left: 0;
+}
+
+ul + ul {
+  margin-left: calc(10px + 30%);
+}
+
+h3 {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 500;
+  text-shadow: 0 1px 1px #0000006b, 0 0 3px #bfc3a9, 0 0 2px #2b2b2e;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.one {
+  background-color: #d4102a;
+}
+.two {
+  background-color: #1185ea;
+}
+.three {
+  background-color: #126a04;
+}
+.four {
+  background-color: #f1e12b;
+}
+
+.column {
+  flex: 0 0 calc(25% - 15px);
+  max-width: calc(25% - 15px);
+  width: 100%;
+  height: 200px;
+  border-radius: 6px;
+  box-shadow: 1px 1px 2px 1px rgb(0 0 0 / 0.03);
+}
+
+@media (max-width: 768px){
+  .column {
+    flex: 0 0 calc(50% - 10px);
+    max-width: calc(50% - 10px);
+  }
+}
+
+@media (max-width: 480px){
+  .column {
+  flex: 0 0 100%;
+  max-width: 100%;
+  }
+}
