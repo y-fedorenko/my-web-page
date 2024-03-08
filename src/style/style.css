@@ -14,6 +14,7 @@
 :root {
   --app-background-dark: #1c1b29;
   --app-font-color-white: #f0e9e9;
+  --app-font-color-yellow: #f5ed14;
 }
 
 html, body {
@@ -24,7 +25,7 @@ html, body {
 
 body {
   background-color: var(--app-background-dark);
-  height: 100%;
+  height: auto;
   overflow: auto;
 }
 
@@ -52,11 +53,6 @@ body {
 .center {
   justify-content: center;
 }
-
-
-/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-/*  Component                                            */
-/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 
 /* ----------------------------------------------------- */
@@ -93,7 +89,7 @@ nav ul li a {
 
 nav ul li a:hover{
   text-decoration: underline;
-  color: #f5ed14;
+  color: var(--app-font-color-yellow);
   text-shadow: 1px 1px 2px #2a2503, 0 0 15px #96965f, 0 0 5px #bcbc20;
 }
 
@@ -108,7 +104,7 @@ nav ul li a:hover{
 
 .page-name:hover{
   text-decoration: underline;
-  color: #f5ed14;
+  color: var(--app-font-color-yellow);
   text-shadow: 1px 1px 2px #2a2503, 0 0 15px #96965f, 0 0 5px #bcbc20;
 }
 
@@ -126,7 +122,7 @@ main {
 
 .hero-banner {
   background-image: url("../media/hero-banner.jpg");
-  height: 100%;
+  height: 100dvh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -152,7 +148,7 @@ main {
   display: inline-block;
   padding: 10px 25px;
   color: var(--app-background-dark);
-  background-color: #f5ed14;
+  background-color: var(--app-font-color-yellow);
   text-align: center;
   cursor: pointer;
   border-radius: 6px;
@@ -183,11 +179,13 @@ article, section {
   
   h2 {
     font-size: 24px;
-    font-weight: 500;
+    font-weight: 300;
     text-shadow: 0 1px 1px #0000006b, 0 0 3px #bfc3a9, 0 0 2px #2b2b2e;
   }
+}
 
-
+span {
+  color: var(--app-font-color-yellow);
 }
 
 .about-photo {
@@ -215,7 +213,7 @@ article, section {
 article ul li {
   line-height: 60px;
   list-style: none;
-  
+  /* text-shadow: 1px 1px 1px #2a2503, 0 0 3px #828279, 0 0 2px #99998a; */
 }
 
 article ul li + li {
@@ -229,7 +227,7 @@ ul + ul {
 h3 {
   margin-top: 20px;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 300;
   text-shadow: 0 1px 1px #0000006b, 0 0 3px #bfc3a9, 0 0 2px #2b2b2e;
 }
 
@@ -237,6 +235,7 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
+  margin-top: 40px;
 }
 
 .one {
@@ -248,23 +247,27 @@ h3 {
 .three {
   background-color: #126a04;
 }
-.four {
-  background-color: #f1e12b;
-}
 
 .column {
-  flex: 0 0 calc(25% - 15px);
-  max-width: calc(25% - 15px);
+  flex: 0 0 calc(33.333333% - 13.333333px);
+  max-width: calc(33.333333% - 13.333333px);
   width: 100%;
   height: 200px;
   border-radius: 6px;
   box-shadow: 1px 1px 2px 1px rgb(0 0 0 / 0.03);
+  background-color: #adadad05;
 }
 
 @media (max-width: 768px){
-  .column {
+
+  .one, .two {
     flex: 0 0 calc(50% - 10px);
     max-width: calc(50% - 10px);
+  }
+
+  .three {
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 }
 
@@ -273,4 +276,62 @@ h3 {
   flex: 0 0 100%;
   max-width: 100%;
   }
+}
+
+
+/* ------------------------------------------------ */
+/* Footer                                           */
+/* ------------------------------------------------ */
+
+footer {
+  margin-top: 80px;
+  height: 104px;
+  background-color: var(--app-background-dark);
+  color: var(--app-font-color-white);
+}
+
+.icon-list {
+  width: 400px;
+  font-size: 24px;
+  color: var(--app-font-color-white);
+  background-color: var(--app-background-dark);;
+  
+  ul {
+    text-align: left;
+    gap: 15px;
+  }
+
+  li {
+    list-style: none;
+    cursor: default;
+    line-height: 104px;
+  }
+
+  i {
+    border-radius: 50%;
+    color: var(--app-font-color-white);
+    border: solid 2px var(--app-font-color-white);
+    height: 48px;
+    width: 48px;
+    line-height: 48px;
+    text-align: center;
+  }
+
+  i:hover {
+    color: var(--app-font-color-yellow);
+    border-color: var(--app-font-color-yellow);
+  }
+}
+
+.copyright {
+  line-height: 104px;
+  text-align: right;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.copyright:hover {
+  color: var(--app-font-color-yellow);
+  border-color: var(--app-font-color-yellow);
 }
