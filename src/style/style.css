@@ -289,6 +289,24 @@ h4 {
   min-height: 250px;
 }
 
+.prj-dashboard {
+  background-image: url("../media/dash-board.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 20px;
+  min-height: 250px;
+}
+
+.prj-web-sites {
+  background-image: url("../media/website-design.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 20px;
+  min-height: 250px;
+}
+
 @media (max-width: 768px){
 
   .one, .two {
