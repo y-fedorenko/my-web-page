@@ -29,6 +29,11 @@ body {
   overflow: auto;
 }
 
+h1, h2, div, p, a, li {
+  -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+
 .container {
   width: min(100% - 30px, 1080px);
   margin-inline: auto;
@@ -63,8 +68,12 @@ body {
 
 header {
   height: 60px;
-  background-color: #0080ff00;
+  background-color: var(--app-background-dark);
   box-shadow: 0 1px 3px #4b4b4e1e;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
 }
 
 nav {
@@ -97,7 +106,7 @@ nav ul li a:hover{
 .page-name {
   text-shadow: 1px 1px 2px #000000, 0 0 10px #b5b5d6, 0 0 3px #2b2b2e;
   color: var(--app-font-color-white);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 400;
   text-decoration: none;
   cursor: pointer;
@@ -154,9 +163,14 @@ main {
   color: var(--app-background-dark);
 
   h1 {
-    font-size: 36px;
-    text-shadow: 0 1px 1px #0000006b, 0 0 3px #bfc3a9, 0 0 2px #2b2b2e;
+    font-size: 56px;
+    color: var(--app-background-dark);
+    text-shadow: 1px 1px 1px #0000006b, 0px 1px 3px #05103c, 0 0 2px #0d0d49;
     }
+
+  p {
+    font-size: 18px;
+  }
 }
 
 .hero-text button {
@@ -260,10 +274,10 @@ h3, h4 {
   flex: 0 0 calc(33.333333% - 13.333333px);
   max-width: calc(33.333333% - 13.333333px);
   width: 100%;
-  height: 450px;
+  height: 440px;
   border-radius: 6px;
-  box-shadow: 1px 1px 2px 1px rgb(0 0 0 / 0.03);
-  background-color: #adadad05;
+  box-shadow: 1px 1px 2px 1px rgba(140, 140, 140, 0.03);
+  background-color: #948b8b03;
   padding: 0 20px;
 
   &:hover {
@@ -285,7 +299,7 @@ h4 {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  margin: 20px;
+  margin: 25px;
   min-height: 250px;
 }
 
@@ -294,7 +308,7 @@ h4 {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  margin: 20px;
+  margin: 25px;
   min-height: 250px;
 }
 
@@ -303,8 +317,37 @@ h4 {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  margin: 20px;
+  margin: 25px;
   min-height: 250px;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/*   Bounce                                              */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+.bounce:hover {
+  display: block;
+  -webkit-animation: bounce 2.5s ease-in-out infinite;
+     -moz-animation: bounce 2.5s ease-in-out infinite;
+          animation: bounce 2.5s ease-in-out infinite;
+}
+
+@-moz-keyframes bounce {
+  0%, 50%, 100% { -moz-transform: translateY(0); }
+  25% { -moz-transform: translateY(-20px); }
+  75% { -moz-transform: translateY(-20px); }
+}
+
+@-webkit-keyframes bounce {
+  0%, 50%, 100% { -webkit-transform: translateY(0); }
+  25% { -webkit-transform: translateY(-20px); }
+  75% { -webkit-transform: translateY(-20px); }
+}
+
+@keyframes bounce {
+  0%, 50%, 100% {transform: translateY(0); }
+  25% { transform: translateY(-20px); }
+  75% { transform: translateY(-20px); }
 }
 
 @media (max-width: 768px){
@@ -343,6 +386,17 @@ h4 {
   article {
     width: 100%;
   }
+}
+
+/* ------------------------------------------------------- */
+/* Contact me                                              */
+/* ------------------------------------------------------- */
+
+.contacts {
+  margin-top: 80px;
+  color: var(--app-font-color-white);
+  height: fit-content;
+  
 
 
 }
