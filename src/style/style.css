@@ -195,7 +195,15 @@ main {
     font-size: 56px;
     color: var(--app-background-dark);
     text-shadow: 1px 1px 1px #0000006b, 0px 1px 3px #05103c, 0 0 2px #0d0d49;
-    }
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  
+  h1.show {
+    opacity: 1;
+    transform: translateX(0);
+  }
 
   p {
     font-size: 18px;
@@ -215,6 +223,19 @@ button {
   border-radius: 23px;
   margin-top: 15px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+button.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+#btn-contact.show {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 button:hover {
@@ -305,7 +326,6 @@ h3, h4 {
   flex-wrap: wrap;
   gap: 15px;
   margin-top: 40px;
-
  }
 
 .column {
@@ -504,6 +524,14 @@ footer {
   height: 104px;
   background-color: var(--app-background-dark);
   color: var(--app-font-color-white);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+footer.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .icon-list {
