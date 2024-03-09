@@ -10,7 +10,6 @@ const buttonContact = document.getElementById('btn-contact');
 const h1 = document.querySelector('h1');
 const footer = document.querySelector('footer');
 
-
 const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -20,7 +19,23 @@ const observer = new IntersectionObserver((entries, observer) => {
     });
 }, { threshold: 0.5 });
 
-observer.observe(header);
+const animationList = [
+  header,
+  h1,
+  article,
+  section,
+  contactMe,
+  heroBanner,
+  buttonCallToAction,
+  buttonContact,
+  footer
+];
+
+animationList.forEach(element => {
+  observer.observe(element);
+});
+
+/* observer.observe(header);
 observer.observe(h1);
 observer.observe(article);
 observer.observe(section);
@@ -28,4 +43,4 @@ observer.observe(contactMe);
 observer.observe(heroBanner);
 observer.observe(buttonCallToAction);
 observer.observe(buttonContact);
-observer.observe(footer);
+observer.observe(footer); */
