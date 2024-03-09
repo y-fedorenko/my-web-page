@@ -103,7 +103,7 @@ nav ul li a:hover{
   text-shadow: 1px 1px 2px #2a2503, 0 0 15px #96965f, 0 0 5px #bcbc20;
 }
 
-.page-name {
+.page-name a {
   text-shadow: 1px 1px 2px #000000, 0 0 10px #b5b5d6, 0 0 3px #2b2b2e;
   color: var(--app-font-color-white);
   font-size: 20px;
@@ -112,7 +112,7 @@ nav ul li a:hover{
   cursor: pointer;
 }
 
-.page-name:hover{
+.page-name a:hover{
   text-decoration: underline;
   color: var(--app-font-color-yellow);
   text-shadow: 1px 1px 2px #2a2503, 0 0 15px #96965f, 0 0 5px #bcbc20;
@@ -173,8 +173,9 @@ main {
   }
 }
 
-.hero-text button {
+button {
   border: none;
+  font-weight: 500;
   outline: 0;
   display: inline-block;
   padding: 10px 25px;
@@ -182,14 +183,14 @@ main {
   background-color: var(--app-font-color-yellow);
   text-align: center;
   cursor: pointer;
-  border-radius: 6px;
+  border-radius: 23px;
   margin-top: 15px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.hero-text button:hover {
+button:hover {
   background-color: var(--app-background-dark);
-  color: white;
+  color: var(--app-font-color-white);
 }
 
 /* ------------------------------------------------------- */
@@ -393,12 +394,35 @@ h4 {
 /* ------------------------------------------------------- */
 
 .contacts {
-  margin-top: 80px;
+  padding-top: 20px;
   color: var(--app-font-color-white);
   height: fit-content;
+  height: 300px;
   
+  p {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: 300;
+  }
+  
+  h2 {
+    font-size: 24px;
+    font-weight: 300;
+    text-shadow: 0 1px 1px #0000006b, 0 0 3px #bfc3a9, 0 0 2px #2b2b2e;
+  }
+}
 
+.contact-image-container {
+  margin-top: 80px;
+  background-image: url("../media/contact-me-banner.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
+.contacts button:hover {
+  background-color: var(--app-font-color-white);
+  color: var(--app-background-dark);
 }
 
 
