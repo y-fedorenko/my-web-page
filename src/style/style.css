@@ -114,7 +114,7 @@ nav ul li a:hover{
 .page-name a {
   text-shadow: 1px 1px 2px #000000, 0 0 10px #b5b5d6, 0 0 3px #2b2b2e;
   color: var(--app-font-color-white);
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 400;
   text-decoration: none;
   cursor: pointer;
@@ -247,8 +247,14 @@ button:hover {
 /* About me                                                */
 /* ------------------------------------------------------- */
 
+h2 {
+  font-size: 32px;
+  font-weight: 300;
+  text-shadow: 0 1px 1px #0000006b, 0 0 3px #bfc3a9, 0 0 2px #2b2b2e;
+}
+
 article, section {
-  margin-top: 80px;
+  margin-top: 60px;
   color: var(--app-font-color-white);
   height: fit-content;
   width: 70%;
@@ -261,12 +267,6 @@ article, section {
     font-size: 18px;
     font-weight: 300;
   }
-  
-  h2 {
-    font-size: 24px;
-    font-weight: 300;
-    text-shadow: 0 1px 1px #0000006b, 0 0 3px #bfc3a9, 0 0 2px #2b2b2e;
-  }
 }
 
 article.show, section.show {
@@ -278,7 +278,7 @@ span {
   color: var(--app-font-color-yellow);
 }
 
-.about-photo {
+#about-photo {
   background-image: url("../media/aboutme.jpg");
   width: 300px;
   height: 600px;
@@ -289,10 +289,22 @@ span {
   margin-left: 15px;
   opacity: 0.9;
   border-radius: 6px;
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.8s ease, transform 1s ease;
 
   &:hover {
     opacity: 1;
   }
+}
+
+#about-photo.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#skills-list {
+  display: flex;
 }
 
 /* ------------------------------------------------------- */
@@ -314,11 +326,17 @@ ul + ul {
 }
 
 h3, h4 {
-
   margin-top: 20px;
-  font-size: 20px;
   font-weight: 300;
   text-shadow: 0 1px 1px #0000006b, 0 0 3px #bfc3a9, 0 0 2px #2b2b2e;
+}
+/* sections header */
+h3 {
+  font-size: 22px;
+}
+/* subsection header */
+h4 {
+  font-size: 22px;
 }
 
 .row {
@@ -332,7 +350,7 @@ h3, h4 {
   flex: 0 0 calc(33.333333% - 13.333333px);
   max-width: calc(33.333333% - 13.333333px);
   width: 100%;
-  height: 440px;
+  height: 420px;
   border-radius: 6px;
   box-shadow: 1px 1px 2px 1px rgba(140, 140, 140, 0.03);
   background-color: #948b8b03;
@@ -358,7 +376,7 @@ h4 {
   background-repeat: no-repeat;
   background-size: contain;
   margin: 25px;
-  min-height: 250px;
+  min-height: 220px;
 }
 
 .prj-dashboard {
@@ -367,7 +385,7 @@ h4 {
   background-repeat: no-repeat;
   background-size: contain;
   margin: 25px;
-  min-height: 250px;
+  min-height: 220px;
 }
 
 .prj-web-sites {
@@ -376,7 +394,7 @@ h4 {
   background-repeat: no-repeat;
   background-size: contain;
   margin: 25px;
-  min-height: 250px;
+  min-height: 220px;
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
@@ -408,7 +426,127 @@ h4 {
   75% { transform: translateY(-20px); }
 }
 
-@media (max-width: 800px){
+/* ------------------------------------------------------- */
+/* Contact me                                              */
+/* ------------------------------------------------------- */
+
+.contacts {
+  padding-top: 20px;
+  color: var(--app-font-color-white);
+  height: fit-content;
+  height: 300px;
+  
+  p {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: 300;
+  }
+}
+
+.contact-image-container {
+  margin-top: 40px;
+  background-image: url("../media/contact-me-banner.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.contacts button:hover {
+  background-color: var(--app-font-color-white);
+  color: var(--app-background-dark);
+}
+
+#contact-me {
+  padding: 40px 0;
+  justify-content: center; /* Horizontal */
+  align-items: center; /* Vertical*/
+  height: 100%; /* height inherited from parent*/
+}
+
+#contact-image-container {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 1s ease;
+}
+
+#contact-image-container.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+/* ------------------------------------------------ */
+/* Footer                                           */
+/* ------------------------------------------------ */
+
+footer {
+  margin-top: 20px;
+  height: 84px;
+  background-color: var(--app-background-dark);
+  color: var(--app-font-color-white);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 1s ease;
+}
+
+footer.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.icon-list {
+  width: 350px;
+  font-size: 24px;
+  color: var(--app-font-color-white);
+  background-color: var(--app-background-dark);
+  display: flex;
+  justify-content: space-between;
+  
+  ul {
+    text-align: left;
+    gap: 15px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  li {
+    list-style: none;
+    cursor: default;
+    line-height: 84px;
+  }
+
+  i {
+    border-radius: 50%;
+    color: var(--app-font-color-white);
+    border: solid 2px var(--app-font-color-white);
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
+  }
+
+  i:hover {
+    color: var(--app-font-color-yellow);
+    border-color: var(--app-font-color-yellow);
+  }
+}
+
+.copyright {
+  line-height: 84px;
+  text-align: right;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  width: 275px;
+}
+
+
+/* ---------------------------------------------------- */
+/* Responsiveness                                       */
+/* ---------------------------------------------------- */
+
+@media (max-width: 904px){
 
   .one, .two {
     flex: 0 0 calc(50% - 10px);
@@ -435,13 +573,13 @@ h4 {
  
 }
 
-@media (max-width: 560px){
+@media (max-width: 599px){
   .column {
   flex: 0 0 100%;
   max-width: 100%;
   }
 
-  .about-photo {
+  #about-photo {
     visibility: hidden;
     width: 1px;
   }
@@ -465,118 +603,39 @@ h4 {
   .hero-text p {
     font-size: 16px;
   }
-}
 
-/* ------------------------------------------------------- */
-/* Contact me                                              */
-/* ------------------------------------------------------- */
-
-.contacts {
-  padding-top: 20px;
-  color: var(--app-font-color-white);
-  height: fit-content;
-  height: 300px;
-  
-  p {
-    margin-top: 15px;
-    font-size: 18px;
-    font-weight: 300;
-  }
-  
-  h2 {
-    font-size: 24px;
-    font-weight: 300;
-    text-shadow: 0 1px 1px #0000006b, 0 0 3px #bfc3a9, 0 0 2px #2b2b2e;
-  }
-}
-
-.contact-image-container {
-  margin-top: 80px;
-  background-image: url("../media/contact-me-banner.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.contacts button:hover {
-  background-color: var(--app-font-color-white);
-  color: var(--app-background-dark);
-}
-
-#contact-image-container {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-#contact-image-container.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-
-
-/* ------------------------------------------------ */
-/* Footer                                           */
-/* ------------------------------------------------ */
-
-footer {
-  margin-top: 40px;
-  height: 104px;
-  background-color: var(--app-background-dark);
-  color: var(--app-font-color-white);
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-footer.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.icon-list {
-  width: 400px;
-  font-size: 24px;
-  color: var(--app-font-color-white);
-  background-color: var(--app-background-dark);;
-  
-  ul {
-    text-align: left;
-    gap: 15px;
+  #skills-list {
+    display: block;
+    align-items: start;
   }
 
-  li {
-    list-style: none;
-    cursor: default;
-    line-height: 104px;
+  ul + ul {
+    margin-left: 0;
   }
 
-  i {
-    border-radius: 50%;
+  .icon-list {
+    width: 80px;
+    font-size: 20px;
     color: var(--app-font-color-white);
-    border: solid 2px var(--app-font-color-white);
-    height: 48px;
-    width: 48px;
-    line-height: 48px;
-    text-align: center;
-  }
+    background-color: var(--app-background-dark);
+    display: block;
 
-  i:hover {
-    color: var(--app-font-color-yellow);
-    border-color: var(--app-font-color-yellow);
-  }
-}
+    ul {
+      text-align: left;
+      gap: 0;
+      display: block;
+    }
 
-.copyright {
-  line-height: 104px;
-  text-align: right;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-}
+    li {
+      line-height: 46px;
+    }
 
-.copyright:hover {
-  color: var(--app-font-color-yellow);
-  border-color: var(--app-font-color-yellow);
+    .copyright p {
+      line-height: 20px;
+    }
+
+    li + li {
+      margin-left: 0;
+    }
+  }  
 }

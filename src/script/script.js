@@ -9,6 +9,7 @@ const buttonCallToAction = document.querySelector('button');
 const buttonContact = document.getElementById('btn-contact');
 const h1 = document.querySelector('h1');
 const footer = document.querySelector('footer');
+const aboutPhoto = document.getElementById('about-photo');
 
 const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
@@ -28,7 +29,8 @@ const animationList = [
   heroBanner,
   buttonCallToAction,
   buttonContact,
-  footer
+  footer,
+  aboutPhoto
 ];
 
 animationList.forEach(element => {
